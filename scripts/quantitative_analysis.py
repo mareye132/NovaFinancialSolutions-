@@ -34,7 +34,7 @@ def visualize_data(df):
     plt.show()
 
 if __name__ == "__main__":
-    file_path = 'scripts/your_stock_data.csv'
+    file_path = 'C:/Users/user/Desktop/Github/NovaFinancialSolutions-/scripts/AAPL_historical_data.csv'
     df = load_and_prepare_data(file_path)
     df = calculate_technical_indicators(df)
     visualize_data(df)
