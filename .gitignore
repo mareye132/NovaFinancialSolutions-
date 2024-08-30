@@ -1,6 +1,5 @@
-# Your local changes
+Data
 data/
 *.log
-
-# Remote changes
 *.csv
+
