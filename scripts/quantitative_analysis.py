@@ -1,3 +1,5 @@
+# quantitative_analysis.py
+
 import pandas as pd
 import talib
 import matplotlib.pyplot as plt
@@ -32,9 +34,3 @@ def visualize_data(df):
 
     plt.tight_layout()
     plt.show()
-
-if __name__ == "__main__":
-    file_path = 'C:/Users/user/Desktop/Github/NovaFinancialSolutions-/scripts/AAPL_historical_data.csv'
-    df = load_and_prepare_data(file_path)
-    df = calculate_technical_indicators(df)
-    visualize_data(df)
