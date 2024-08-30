@@ -1,1 +1,6 @@
+# Your local changes
 data/
+*.log
+
+# Remote changes
+*.csv
