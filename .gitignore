@@ -1,5 +1,6 @@
-Data
+# Ignore directories
 data/
 *.log
-*.csv
 
+# Ignore specific files
+*.csv

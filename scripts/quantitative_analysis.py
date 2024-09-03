@@ -1,5 +1,7 @@
 import pandas as pd
 import talib
+import pynance as pn
+import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import pynance as pn  # Keep this if needed for additional functionalities
 
@@ -32,6 +34,19 @@ def calculate_financial_metrics(df):
     return daily_returns
 
 def visualize_data(df):
+    plt.figure(figsize=(14, 7))
+
+    # Plot Close Price and Moving Averages
+    plt.plot(df.index, df['Close'], label='Close Price')
+    plt.plot(df.index, df['SMA_50'], label='50-Day SMA')
+    plt.plot(df.index, df['SMA_200'], label='200-Day SMA')
+    plt.title('Stock Price with Moving Averages')
+    plt.legend()
+    plt.show()
+
+    # Plot RSI
+    plt.figure(figsize=(14, 5))
+    plt.plot(df.index, df['RSI'], label='RSI')
     plt.figure(figsize=(12, 6))
 
     # Plot Close Prices and Moving Average
