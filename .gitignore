@@ -1,6 +1,6 @@
-# Your local changes
+# Ignore directories
 data/
 *.log
 
-# Remote changes
+# Ignore specific files
 *.csv

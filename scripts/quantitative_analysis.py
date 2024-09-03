@@ -2,6 +2,8 @@ import pandas as pd
 import talib
 import pynance as pn
 import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+import pynance as pn  # Keep this if needed for additional functionalities
 
 def load_data(file_path):
     # Load your stock price data into a pandas DataFrame
@@ -45,10 +47,25 @@ def visualize_data(df):
     # Plot RSI
     plt.figure(figsize=(14, 5))
     plt.plot(df.index, df['RSI'], label='RSI')
+    plt.figure(figsize=(12, 6))
+
+    # Plot Close Prices and Moving Average
+    plt.subplot(2, 1, 1)
+    plt.plot(df['Close'], label='Close Price')
+    plt.plot(df['SMA_50'], label='50-Day SMA')
+    plt.plot(df['SMA_200'], label='200-Day SMA')
+    plt.title('Stock Price with Moving Averages')
+    plt.legend()
+
+    # Plot RSI
+    plt.subplot(2, 1, 2)
+    plt.plot(df['RSI'], label='RSI')
     plt.axhline(70, color='red', linestyle='--')
     plt.axhline(30, color='green', linestyle='--')
     plt.title('Relative Strength Index (RSI)')
     plt.legend()
+
+    plt.tight_layout()
     plt.show()
 
     # Plot MACD
